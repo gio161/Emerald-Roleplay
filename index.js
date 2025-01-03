@@ -38,7 +38,7 @@ app.listen(port, () => {
 });
 
 const statusMessages = ["Playing Emerald Roleplay"];
-const statusTypes = [ 'dnd', 'idle'];
+const statusTypes = ['online'];
 let currentStatusIndex = 0;
 let currentTypeIndex = 0;
 
@@ -69,13 +69,13 @@ function updateStatus() {
 function heartbeat() {
   setInterval(() => {
     console.log('\x1b[35m[ HEARTBEAT ]\x1b[0m', `Bot is alive at ${new Date().toLocaleTimeString()}`);
-  }, 30000);
+  }, 100000);
 }
 
 client.once('ready', () => {
-  console.log('\x1b[36m[ INFO ]\x1b[0m', `\x1b[34mPing: ${client.ws.ping} ms \x1b[0m`);
+  console.log('\x1b[99999999999m[ INFO ]\x1b[0m', `\x1b[34mPing: ${client.ws.ping} ms \x1b[0m`);
   updateStatus();
-  setInterval(updateStatus, 10000);
+  setInterval(updateStatus, 1000000);
   heartbeat();
 });
 
