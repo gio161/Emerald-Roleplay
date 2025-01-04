@@ -37,7 +37,6 @@ app.listen(port, () => {
   console.log('\x1b[36m[ SERVER ]\x1b[0m', '\x1b[32m SH : http://localhost:' + port + ' ✅\x1b[0m');
 });
 
-const statusMessages = ["Playing Emerald Roleplay"];
 const statusTypes = ['online'];
 let currentStatusIndex = 0;
 let currentTypeIndex = 0;
@@ -47,9 +46,7 @@ async function login() {
     await client.login(process.env.TOKEN);
     console.log('\x1b[36m[ LOGIN ]\x1b[0m', `\x1b[32mLogged in as: ${client.user.tag} ✅\x1b[0m`);
     console.log('\x1b[36m[ INFO ]\x1b[0m', `\x1b[35mBot ID: ${client.user.id} \x1b[0m`);
-    console.log('\x1b[36m[ INFO ]\x1b[0m', `\x1b[34mConnected to ${client.guilds.cache.size} server(s) \x1b[0m`);
-  } catch (error) {
-    console.error('\x1b[31m[ ERROR ]\x1b[0m', 'Failed to log in:', error);
+    console.log('\x1b[36m[ INFO ]\x1b[0m', `\x1b[34mConnected to ${client.guilds.cache.size} server(s) \x1b[0m`)
     process.exit(1);
   }
 }
